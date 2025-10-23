@@ -1,0 +1,243 @@
+.main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 100vh; /* stays inside viewport */
+}
+
+.form-container {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    max-width: 700px;
+    margin: auto;
+}
+
+form textarea {
+    width: 100%;
+    min-height: 150px;
+    max-height: 500px;
+    resize: vertical;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+    overflow-y: auto;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+label {
+    font-weight: 600;
+    display: block;
+    margin-top: 15px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="date"],
+select,
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Buttons */
+input[type="submit"] {
+    background: #004102;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    margin-top: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+input[type="submit"]:hover {
+    background: #005c03;
+}
+
+/* Button group layout */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.button-group input[type="submit"] {
+    flex: 1;
+}
+
+.button-group .draft-btn {
+    background-color: #888;
+    color: white;
+}
+
+.button-group .draft-btn:hover {
+    background-color: #666;
+}
+
+/* Messages */
+.success-message, .error-message {
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.success-message {
+    background: #d4edda;
+    color: #155724;
+}
+
+.error-message {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Image preview */
+.image-preview {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.image-preview img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-top: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Back link */
+.add-back {
+    display: inline-block;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: #004102;
+    font-weight: 600;
+}
+
+.add-back:hover {
+    text-decoration: underline;
+}
+
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px;
+        max-width: 90%;
+        margin: 20px auto;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    select,
+    textarea,
+    input[type="file"] {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .button-group input[type="submit"] {
+        width: 100%;
+    }
+
+    .add-back {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+
+
+    .dashboard-container .main-content {
+        margin-left: 0;
+    }
+
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 18px;
+    }
+
+    input[type="submit"] {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    form textarea {
+        min-height: 120px;
+    }
+}
+
+/* Hamburger button */
+.hamburger-btn {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: #004102;
+    color: white;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Sidebar responsive behavior */
+@media (max-width: 768px) {
+    .hamburger-btn {
+        display: block;
+    }
+
+    .sidebar {
+        position: fixed;
+        left: -260px;
+        top: 0;
+        width: 240px;
+        height: 100%;
+        background: #fff;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        transition: left 0.3s ease;
+        z-index: 1000;
+    }
+
+    .sidebar.show {
+        left: 0;
+    }
+
+    .main-content {
+        margin-left: 0 !important;
+    }
+}
+
